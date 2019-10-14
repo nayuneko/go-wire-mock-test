@@ -13,6 +13,7 @@ import (
 )
 
 func Test_UserService_CreateEntry(t *testing.T) {
+
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
 
@@ -38,6 +39,7 @@ func Test_UserService_CreateEntry(t *testing.T) {
 		if err != nil {
 			t.Fatalf("err is not nil. err = %#v", err)
 		}
+
 	})
 
 	t.Run("failed FindByID", func(t *testing.T) {
@@ -59,7 +61,9 @@ func Test_UserService_CreateEntry(t *testing.T) {
 		if got := err.Error(); got != want {
 			t.Fatalf("mismatch error message. got = %#v, want = %#v", got, want)
 		}
+
 	})
+
 	t.Run("failed CreateEntry", func(t *testing.T) {
 
 		id := int64(102)
@@ -83,5 +87,7 @@ func Test_UserService_CreateEntry(t *testing.T) {
 		if got := err.Error(); got != want {
 			t.Fatalf("mismatch error message. got = %#v, want = %#v", got, want)
 		}
+
 	})
+
 }

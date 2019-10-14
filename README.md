@@ -6,7 +6,7 @@
 
 Wire: https://github.com/google/wire
 
-- servive,repositoryをinterfaceで定義
+- service,repositoryをinterfaceで定義
 - di用に`wire.go`を作成
 - `wire wire.go`で`wire_gen.go`を生成
 
